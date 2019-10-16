@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource { 
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
 
     
     
@@ -16,6 +16,9 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    
+    
+    @IBOutlet weak var shoppinglistTableView: UITableView!
     
     
     var shoppingListArray = [String]()
@@ -37,7 +40,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     }
 
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
@@ -49,15 +52,26 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
-        cell.textLabel?.text = "hello"
+        if let itemName = cell.viewWithTag(1) as? UILabel{
+            itemName.text = shoppingListArray[indexPath.row]
+        }
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        
+    }
+    
     
     @IBAction func addButtonAction(_ sender: UIButton) {
         let item = textfieldItem.text
         self.shoppingListArray.append(item!)
         print("array is",shoppingListArray)
+        self.shoppinglistTableView.reloadData()
     }
     
     
