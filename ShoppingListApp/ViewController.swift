@@ -111,9 +111,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         self.shoppinglistTableView.reloadData()
     }
     
-//function for save button and saving the item list into userdefaults
+//function for save button and saving the item list into userDefaults
     @IBAction func save(_ sender: UIButton) {
         defaults.set(shoppingListArray, forKey: "shoppingListArray")
+        print("shoppingListArray is")
+        print(defaults.array(forKey: "shoppingListArray")!)
     }
     
     
