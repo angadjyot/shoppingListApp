@@ -63,7 +63,7 @@
                                                     <rect key="frame" x="289" y="37" width="94" height="29"/>
                                                     <color key="tintColor" red="0.950968802" green="0.52640016999999995" blue="0.17427517670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
-                                                        <action selector="wssw:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rkl-hk-IU8"/>
+                                                        <action selector="stepperAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="I4S-B9-Up9"/>
                                                     </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KA1-I5-6rM">
@@ -146,6 +146,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Shooping List" id="8w1-gd-z0h"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="addButton" destination="wyl-Kk-Xn1" id="1DE-zt-rPF"/>
                         <outlet property="cancelButton" destination="BZ4-rx-VGG" id="kIA-N4-gp4"/>
